@@ -23,7 +23,6 @@ class MusicRecommender(object):
         }
 
     def _get_temperature_by_location(self, lat, long, *args, **kwargs) -> int:
-        # TODO: implement integration with openweather here
         url = 'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={long}&appid={appid}&exclude=minutely,hourly,daily,weekly&units=metric'.format_map({
             'lat': lat,
             'long': long,
@@ -47,7 +46,6 @@ class MusicRecommender(object):
         return DEFAULT_GENRES[temperature_level]
 
     def _get_song_recommendations_by_genre(self, genre) -> list:
-        # TODO: implement integration with music recommendations here
         token = self.__get_spotify_token()
         
         url = 'https://api.spotify.com/v1/recommendations'
